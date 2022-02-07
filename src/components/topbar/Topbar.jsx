@@ -1,5 +1,7 @@
 import React from 'react';
 import './topbar.css';
+import logo from './images/logo.jpg';
+import pic1 from './images/pic1.jpg';
 // import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 // import {NotificationsNone} from '@mui/icons-material';
 import {FaBell } from 'react-icons/fa';
@@ -13,7 +15,8 @@ function Topbar() {
         <div className = "topbar">
             <div className="topbarWrapper">
                 <div className="topLeft">
-                    <span className ="logo">lamaadmin</span>
+                    {/* <span className ="logo">lamaadmin</span> */}
+                    <img className="logo" src={logo} alt="Logo" />
                 </div>
                 <div className="topRight">
                     <div className="topbarIconContainer">
@@ -30,7 +33,7 @@ function Topbar() {
                     <AiFillSetting/>
                     {/* <span className="topIconBadge">2</span> */}
                     </div>
-                    <img src="https://images.pexels.com/photos/1526814/pexels-photo-1526814.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" className="topAvatar" />
+                    <img src={pic1} alt="" className="topAvatar" />
 
                 </div>
             </div>
