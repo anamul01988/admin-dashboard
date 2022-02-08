@@ -13,6 +13,7 @@ import {BiMessageSquareDetail} from 'react-icons/bi';
 import {MdOutlineManageSearch} from 'react-icons/md';
 import {SiGoogleanalytics} from 'react-icons/si';
 import {MdReport} from 'react-icons/md';
+import {Link} from "react-router-dom";
 // import {GrLanguage } from 'react-icons/gr';
 // import {AiFillSetting } from 'react-icons/ai';
 function Sidebar() {
@@ -25,10 +26,12 @@ function Sidebar() {
                   Dashboard
               </h3>
               <ul className="sidebarList">
-                 <li className = "sidebarListItem active">
-                    <MdLineStyle/>
-                    Home
-                  </li>
+                <Link to="/" className="link">
+                  <li className = "sidebarListItem active">
+                      <MdLineStyle/>
+                      Home
+                    </li>
+                </Link>
                  <li className = "sidebarListItem">
                     <MdTimeline/>
                     Analytics
@@ -45,15 +48,19 @@ function Sidebar() {
                   Quick Menu
               </h3>
               <ul className="sidebarList">
-                 <li className = "sidebarListItem">
+                <Link to="/users" className="link">
+                  <li className = "sidebarListItem">
                     <FiUsers/>
                     users
                   </li>
-                 <li className = "sidebarListItem">
+                </Link>
+                <Link to="/products" className="link">
+                  <li className = "sidebarListItem">
                     <MdOutlineProductionQuantityLimits/>
                     Products
                   </li>
-                 <li className = "sidebarListItem">
+                </Link>
+                 <li className = "sidebarListItem" >
                     <AiOutlineDollarCircle/>
                     Transections
                   </li>
