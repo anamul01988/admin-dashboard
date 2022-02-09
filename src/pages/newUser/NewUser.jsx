@@ -1,9 +1,16 @@
 import "./newUser.css";
+import { Link } from "react-router-dom";
 
 export default function NewUser() {
   return (
     <div className="newUser">
-      <h1 className="newUserTitle">New User</h1>
+      <div className="userTitle">
+          <h1 className="newUserTitle">New User</h1>
+          <Link to={"/userAll/"}>
+            <button className="newUserButton">Existing User</button>
+        </Link>
+        </div>
+      {/* <h1 className="newUserTitle">New User</h1> */}
       <form className="newUserForm">
         <div className="newUserItem">
           <label>Username</label>
@@ -48,6 +55,10 @@ export default function NewUser() {
           </select>
         </div>
         <button className="newUserButton">Create</button>
+        {/* <Link to={"/userAll/"}>
+            <button className="newUserButton">Existiong User</button>
+        </Link> */}
+       
       </form>
     </div>
   );
