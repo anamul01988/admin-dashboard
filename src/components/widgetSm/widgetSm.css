@@ -59,3 +59,24 @@
     font-size: 16px !important;
     margin-right: 5px;
 }
+.main-head {
+    text-align: center;
+  }
+  input[type="search"] {
+    text-align: center;
+    font-size: 18px;
+    /* width: 300px;
+    height: 40px; */
+    margin: 20px;
+    padding: 10px 25px;
+  }
+  .newUserItem > input {
+    height: 46px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+  /* .usersName{
+    display: none;
+  } */
+  

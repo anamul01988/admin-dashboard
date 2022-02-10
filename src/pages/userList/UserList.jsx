@@ -7,7 +7,8 @@ import { useState } from "react";
 
 export default function UserList() {
   const [data, setData] = useState(userRows);
-
+  const [searchTerm, setSearchTerm] = useState("");
+console.log(userRows)
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
   };
@@ -59,8 +60,54 @@ export default function UserList() {
     },
   ];
 
+  const HandleSearch = e =>{
+    e.preventDefault(); //aita form ta k auto refresh kora theke atkabe. sathe form ta k grabe korbe
+    console.log(searchTerm);
+  }
+
   return (
     <div className="userList">
+      <div className="main-head">
+      {/* <input 
+        type="text"
+        placeholder="search for existing user"
+        onChange={(event)=>{
+          setSearchTerm(event.target.value);
+        }}
+       /> */}
+
+           <form className="search-box"
+                onSubmit={HandleSearch}>
+                    <input type="search" placeholder="Search for userName: "
+                    required
+                    value = {searchTerm}
+                    onChange = {e => setSearchTerm(e.target.value)}
+                    ></input>
+
+                </form>
+      
+      {userRows.filter((val)=> {
+          if(searchTerm == ""){
+            // return val
+          } else if(val.username.toLowerCase().includes(searchTerm.toLowerCase())){
+            console.log(val)
+              return val;
+              // return (
+              //   <p>{val}</p>
+              // );
+          }
+
+        }).map((val, key) => {
+          return (
+            <div className='users' key={key}>
+                <p className="usersName">{val.username}</p>
+            </div>
+          );
+        })
+      }
+      </div>
+
+
       <DataGrid
         rows={data}
         disableSelectionOnClick
