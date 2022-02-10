@@ -9,21 +9,21 @@ import NewUser from './pages/newUser/NewUser';
 import ProductList from './pages/productList/ProductList';
 import Product from './pages/product/Product';
 import NewProduct from './pages/newProduct/NewProduct';
+import { UserAuthContextProvider } from './context/UserAuthContext';
 
 
 function App() {
   return (
-    <Router>
-          <Topbar/>
+    <UserAuthContextProvider>
+        <Topbar/>
+        {/* <Sidebar/> */}
           <div class="container">
               <Sidebar/>
               <Switch>
                 <Route exact path="/">
                    <Home/>
                 </Route>
-                {/* <Route path="/users">
-                   <UserList/>
-                </Route> */}
+             
                 <Route path="/users">
                    <NewUser/>
                 </Route>
@@ -48,7 +48,9 @@ function App() {
               </Switch>
               
           </div>
-    </Router>
+       
+    </UserAuthContextProvider>
+         
   );
 }
 
